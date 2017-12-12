@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  background-image: url("https://c1.staticflickr.com/3/2501/3731109335_2e174232a5_b.jpg");
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size:  cover;
+  background-color: #999;
+  overflow-x: hidden;
+}
+
+.navbar-header {
+  height: 100px;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  padding-top: 50px;
+  float: right;
+  font-family: 'Pacifico', cursive;
+
+
+}
+
+
+img {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}

@@ -1,0 +1,20 @@
+
+
+<div class="row">
+  <div class="col-md-12">
+
+        <button class="btn btn-success btn-block" (click)="onNewFactory()">
+          <span class="glyphicon glyphicon-plus"></span> </button>
+
+    </div>
+  </div>
+
+
+<app-factory-information
+  *ngFor="let factory of factories"
+  [factory] = factory
+  [routerLink]="[factory._id]"
+  routerLinkActive="active"
+
+></app-factory-information>
+

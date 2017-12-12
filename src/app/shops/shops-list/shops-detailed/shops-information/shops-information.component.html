@@ -1,0 +1,36 @@
+
+<p> Plaats: {{bar.city}}</p>
+
+<p> Koffie aanbod</p>
+
+
+<div *ngIf="bar.beans.length > 0; else information">
+<a
+  *ngFor="let bean of bar.beans"
+  style="cursor: pointer;"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <img [src]="bean.image_url" alt="{{ bean.title }}"
+         class="img-responsive"
+         style="max-height: 80px; alignment: left">
+  </div>
+  <div class="row">
+    <h4 class="list-group-item-heading">{{ bean.title }}</h4>
+
+  </div>
+</a>
+
+</div>
+
+
+<ng-template #information>
+  <div class="row">
+    <div class="col-lg-12">
+  Nog geen speciale bonen
+    </div>
+  </div>
+</ng-template>
+
+<!--<a (click)="onEditBar()"   routerLink = "/shops/{{bar._id}}/edit"> Wijzig </a>-->
+<a (click)="onDeleteBar()"> Verwijder koffiebar </a>
+

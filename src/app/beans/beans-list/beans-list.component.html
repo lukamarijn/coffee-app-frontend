@@ -1,0 +1,55 @@
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="input-group col-md-12">
+      <input type="text" class="search-query form-control" placeholder="Search" #titleInput/>
+      <span class="input-group-btn">
+        <button class="btn btn-default" (click)="onFilter(titleInput)">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+        <button class="btn btn-success">
+          <span class="glyphicon glyphicon-plus"
+          (click)="onNewCoffeeBean()"></span> </button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-md-12">
+          <label> Filter op koffieplantage</label>
+          <select [(ngModel)]="selectedPlantation" class="form-control" (change)="onFilter(titleInput)" >
+            <option *ngFor="let option of objArray" selected [value]="option.value" >{{ option.name }}</option>
+          </select>
+        </div>
+
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <label> Filter op smaak</label>
+    <select [(ngModel)]="selectedTaste" class="form-control" (change)="onFilter(titleInput)" >
+      <option *ngFor="let option of tasteArray" selected [value]="option.value" >{{ option.name }}</option>
+    </select>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-md-12">
+      <label> Filter op type</label>
+      <select [(ngModel)]="selectedType" class="form-control" (change)="onFilter(titleInput)" >
+        <option *ngFor="let option of typeArray" selected [value]="option.value" >{{ option.name }}</option>
+      </select>
+    </div>
+
+</div>
+
+<hr>
+
+
+    <app-bean-detailed
+      *ngFor="let bean of beans; let i = index"
+      [bean] = "bean"
+      [index] = "bean._id"> </app-bean-detailed>
+
+

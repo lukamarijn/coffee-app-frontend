@@ -1,0 +1,21 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#{{bar._id}}">{{bar.name}}</a>
+    </h4>
+  </div>
+  <div id="{{bar._id}}"    class="panel-collapse collapse">
+    <div class="panel-body">
+      <app-shops-information
+        [bar] = "bar"
+        (deleteBar)="onDelete($event)"
+
+        (editBar)="onEdit($event)"></app-shops-information>
+
+  </div>
+
+
+</div>
+</div>
+

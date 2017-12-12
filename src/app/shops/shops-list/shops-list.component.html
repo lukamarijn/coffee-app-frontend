@@ -1,0 +1,11 @@
+<button class="btn btn-success btn-block" (click)="onAddBar()"> Voeg een koffiebar toe </button>
+
+  <div class="panel-group" id="accordion" >
+
+
+    <app-shops-detailed   *ngFor="let bar of bars; let i = index"
+                          [bar] = "bar"
+                          routerLink = "/shops/{{bar._id}}/edit"
+                          [index] = "bar._id"></app-shops-detailed>
+  </div>
+

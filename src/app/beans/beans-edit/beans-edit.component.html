@@ -1,0 +1,141 @@
+
+
+<div  class="list-group-item clearfix">
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="beanForm" (ngSubmit)="onSubmit()">
+      <input
+        type="hidden"
+        id="_id"
+        formControlName="_id"
+        class="form-control">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="title">Titel</label>
+            <input
+              type="text"
+              id="title"
+              formControlName="title"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="image_url">Foto verpakking</label>
+            <input
+              type="text"
+              id="image_url"
+              formControlName="image_url"
+              class="form-control"
+              #imagePath>
+          </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+              <label for="large_image_url">Foto bonen</label>
+              <input
+                type="text"
+                id="large_image_url"
+                formControlName="large_image_url"
+                class="form-control"
+                #imagePathLarge>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+
+        <img [src]="imagePath.value" class="img-responsive">
+        </div>
+        <div class="col-xs-6">
+          <img [src]="imagePathLarge.value" class="img-responsive">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="roasting_house">Branderij</label>
+            <select
+              id="roasting_house"
+              formControlName="roasting_house"
+              class="form-control">
+              <option
+                *ngFor="let factory of factories" [value]="factory._id"> {{factory.name}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="taste">Smaak</label>
+            <select
+              ([ngModel]) = selectedTaste
+              id="taste"
+              formControlName="taste"
+              class="form-control">
+              <option
+                *ngFor="let taste of tasteArray"  selected [value]="taste.value"> {{taste.name}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="type">Type</label>
+
+            <select
+              ([ngModel]) = selectedType
+              id="type"
+              formControlName="type"
+              class="form-control">
+              <option
+                *ngFor="let type of typeArray"  selected [value]="type.value"> {{type.name}}
+              </option>
+            </select>
+        </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+          <div class="col-xs-6">
+            <label>Plantage</label>
+          <div class="form-group">
+            <input
+              type="text"
+              id="plantation"
+              formControlName="plantation"
+              class="form-control"
+            >
+          </div>
+          </div>
+          <div class="col-xs-6">
+            <label>Herkomst</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="country"
+                formControlName="country"
+                class="form-control"
+              >
+
+            </div>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!beanForm.valid">Save</button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>

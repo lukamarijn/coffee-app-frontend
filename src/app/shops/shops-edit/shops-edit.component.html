@@ -1,0 +1,53 @@
+
+
+<div  class="list-group-item clearfix">
+  <div class="row">
+    <div class="col-xs-12">
+      <form [formGroup]="barForm" (ngSubmit)="onSubmit(barForm)">
+        <input
+          type="hidden"
+          id="_id"
+          formControlName="_id"
+          class="form-control">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Naam</label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="beans">Bonen </label>
+              <select multiple
+                id="beans"
+                formControlName="beans"
+                class="form-control">
+                <option
+                  *ngFor="let bean of beans" [value]="bean._id"> {{bean.title}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!barForm.valid">Save</button>
+            <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

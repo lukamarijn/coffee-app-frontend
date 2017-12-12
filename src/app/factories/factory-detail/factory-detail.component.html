@@ -1,0 +1,35 @@
+
+
+<div *ngIf="message" class="alert alert-danger">
+  <strong>Warning!</strong> Kan {{factory.name}} niet verwijderen. Er bestaan nog koffiebonen met deze
+  branderij
+</div>
+
+  <div  class="list-group-item clearfix">
+    <div class="row">
+
+      <div class="col-md-6">
+
+        <h2>{{ factory.name }}</h2>
+
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="pull-right">
+        <button class="btn btn-warning">
+          <span class="glyphicon glyphicon-edit" (click)="editFactory()"></span> Wijzig </button>
+        <button class="btn btn-danger">
+          <span class="glyphicon glyphicon-minus" (click)="deleteFactory()"></span>  Verwijder  </button>
+      </div>
+    </div>
+
+    <!--<div class="row">
+
+      <img [src]="bean.large_image_url" [alt]="bean.title"   class="img-responsive detailed"
+           style="width: 650px; height: 250px; alignment: center">
+
+    </div>-->
+
+  </div>

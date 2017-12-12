@@ -1,0 +1,48 @@
+
+
+<div *ngIf="bean == null; else beans"> </div>
+
+<ng-template #beans>
+
+
+<div  class="list-group-item clearfix">
+
+  <div class="row">
+    <div class="col-md-6">
+    <img [src]="bean.image_url" [alt]="bean.title"   class="img-responsive"
+         style="width: auto; max-height: 300px; alignment: center">
+    </div>
+    <div class="col-md-6">
+
+      <h2>{{ bean.title }}</h2>
+
+      <br>
+
+      <p> Deze boon is verbouwd door de plantage {{bean.plantation}} </p>
+      <p> {{bean.roasting_house.name}} is verantwoordelijk voor het branden van de bonen. </p>
+
+      <p> Smaak : {{bean.taste}}</p>
+      <p> Herkomst: {{bean.country}}</p>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="pull-right">
+      <button class="btn btn-warning">
+        <span class="glyphicon glyphicon-edit" (click)="editBean()"></span> Wijzig </button>
+      <button class="btn btn-danger"  appConfirm message='Weet je zeker dat je {{bean.title}} wilt verwijderen?' (confirmClick)="deleteBean()">
+        <span class="glyphicon glyphicon-minus"></span>  Verwijder  </button>
+    </div>
+  </div>
+  <div class="row">
+
+    <img [src]="bean.large_image_url" [alt]="bean.title"   class="img-responsive detailed"
+         style="width: 650px; height: 250px; alignment: center">
+
+  </div>
+</div>
+
+
+
+</ng-template>

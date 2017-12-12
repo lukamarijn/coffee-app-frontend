@@ -1,0 +1,52 @@
+
+
+<div  class="list-group-item clearfix">
+  <div class="row">
+    <div class="col-xs-12">
+      <form [formGroup]="factoryForm" (ngSubmit)="onSubmit(factoryForm)">
+        <input
+          type="hidden"
+          id="_id"
+          formControlName="_id"
+          class="form-control">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Naam</label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="city">Stad</label>
+              <input
+                type="text"
+                id="city"
+                formControlName="city"
+                class="form-control">
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!factoryForm.valid">Save</button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

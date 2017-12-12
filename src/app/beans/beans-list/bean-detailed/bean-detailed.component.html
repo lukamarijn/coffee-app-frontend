@@ -1,0 +1,24 @@
+<a
+  style="cursor: pointer;"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <img [src]="bean.image_url" alt="{{ bean.title }}"
+         class="img-responsive"
+         style="max-height: 80px; alignment: left">
+  </div>
+  <div class="pull-right">
+    <h4 class="list-group-item-heading">{{ bean.title }}</h4>
+    <table>
+      <tr>
+        <th> Branderij: </th>
+        <th> {{bean.roasting_house.name}}  </th>
+      </tr>
+      <tr>
+        <td>  Blend: </td>
+        <td>75% Ethiopia 25% Guatemala </td>
+      </tr>
+    </table>
+  </div>
+</a>

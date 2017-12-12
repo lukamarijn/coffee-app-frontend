@@ -1,0 +1,23 @@
+
+.sidebar-nav .navbar {
+  padding: 0;
+  max-height: none;
+
+}
+.sidebar-nav .navbar ul {
+  float: none;
+  display: block;
+}
+.sidebar-nav .navbar li {
+  float: none;
+  display: block;
+}
+.sidebar-nav .navbar li a {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+span {
+  padding: 5px;
+  margin-right: 10px;
+}
