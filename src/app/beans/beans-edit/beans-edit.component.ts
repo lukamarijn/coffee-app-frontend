@@ -35,6 +35,7 @@ export class BeansEditComponent implements OnInit {
     { 'name': "Kruidig" , value: "kruidig"},
     { 'name': "Mild" , value: "mild"}];
   selectedTaste : string = "";
+  selectedType : string = "";
 
   typeArray = [ { 'name':'Espresso', value: "espresso" },
     { 'name': "Cafetiere" , value: "filter"},
