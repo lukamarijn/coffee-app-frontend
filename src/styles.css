@@ -7,7 +7,7 @@ body {
   background-attachment: fixed;
   background-size:  cover;
   background-color: #999;
-  overflow-x: hidden;
+
 }
 
 .navbar-header {
@@ -15,10 +15,11 @@ body {
 }
 
 .navbar-brand {
-  font-size: 30px;
+ font-size: 2em;
   padding-top: 50px;
   float: right;
-  font-family: 'Pacifico', cursive;
+ font-family: 'Pacifico', cursive;
+
 
 
 }

@@ -15,10 +15,11 @@ import {FactoriesStorageService} from "../../shared/factories.storage.service";
 export class FactoryEditComponent implements OnInit {
 
   id: string;
+  area = '';
   editMode = false;
   factoryForm: FormGroup;
   factory: Factory;
-  subscription: Subscription;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -42,7 +43,8 @@ export class FactoryEditComponent implements OnInit {
 
   private initForm() {
     let id = '';
-    /*  let imagePath = '';*/
+    let imagePath = '';
+    let description = '';
     let name = '';
     let city = '';
 
@@ -50,8 +52,10 @@ export class FactoryEditComponent implements OnInit {
       const factory = this.factoryService.getFactory(this.id);
       id = factory._id;
       name = factory.name;
-      /*imagePath = bean.image_url;*/
-      city = factory.city
+      imagePath = factory.image_url;
+      city = factory.city;
+      description = factory.description,
+      this.area = factory.description
 
 
     }
@@ -59,7 +63,9 @@ export class FactoryEditComponent implements OnInit {
     this.factoryForm = new FormGroup({
       '_id': new FormControl(id),
       'name': new FormControl(name, Validators.required),
-      'city': new FormControl(city, Validators.required)
+      'city': new FormControl(city, Validators.required),
+      'description': new FormControl(description),
+      'image_url': new FormControl(imagePath, Validators.required)
 
     });
   }
@@ -76,6 +82,7 @@ export class FactoryEditComponent implements OnInit {
 
     else {
 
+      console.log(form.value);
       this.dataStorageService.postFactory(form.value);
       this.router.navigate(['/factories']);
 

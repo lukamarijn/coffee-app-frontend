@@ -63,6 +63,7 @@
               formControlName="roasting_house"
               class="form-control">
               <option
+                ([ngModel]) = selectedFactory
                 *ngFor="let factory of factories" [value]="factory._id"> {{factory.name}}
               </option>
             </select>

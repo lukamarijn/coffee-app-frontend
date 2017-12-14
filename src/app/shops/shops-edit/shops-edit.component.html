@@ -26,12 +26,12 @@
           <div class="col-xs-12">
             <div class="form-group">
               <label for="beans">Bonen </label>
-              <select multiple
+              <select multiple="multiple"
                 id="beans"
                 formControlName="beans"
                 class="form-control">
                 <option
-                  *ngFor="let bean of beans" [value]="bean._id"> {{bean.title}}
+                  *ngFor="let bean of beans" selected="selected" [value]="bean._id"> {{bean.title}}
                 </option>
               </select>
             </div>

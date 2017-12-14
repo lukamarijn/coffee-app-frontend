@@ -18,7 +18,7 @@ export class FactoryDetailComponent implements OnInit {
   id: string;
   subscription: Subscription;
   beansSubscription: Subscription;
-  factory: Factory = new Factory('test', 'test')
+  factory: Factory = new Factory('test', 'test', 'test', 'test');
   beans: Bean[];
   message = false;
 
@@ -42,6 +42,7 @@ export class FactoryDetailComponent implements OnInit {
             .subscribe((factory: Factory) => {
                 this.factory = factory;
                 console.log(this.factory);
+                this.message = false;
 
               }
             );

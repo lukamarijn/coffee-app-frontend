@@ -24,11 +24,10 @@ export class BeansEditComponent implements OnInit {
 
   factories : Factory[] =
     [
-      new Factory("Branderij1", "1"),
-      new Factory("Branderij2", "2")
+      new Factory("Branderij1", "1", "test", "test"),
+      new Factory("Branderij2", "2", "test", "test")
     ];
 
-  //toepassen databinding!!
   tasteArray = [ { 'name':'Zoet', value: "zoet" },
     { 'name': "Bloemig" , value: "bloemig"},
     { 'name': "Zuur" , value: "zuur"},
@@ -36,6 +35,7 @@ export class BeansEditComponent implements OnInit {
     { 'name': "Mild" , value: "mild"}];
   selectedTaste : string = "";
   selectedType : string = "";
+  selectedFactory: string = "";
 
   typeArray = [ { 'name':'Espresso', value: "espresso" },
     { 'name': "Cafetiere" , value: "filter"},
@@ -71,6 +71,7 @@ export class BeansEditComponent implements OnInit {
     this.factoryDataStorageService.getFactories();
     console.log(this.factories);
 
+
   }
 
   private initForm() {
@@ -87,15 +88,18 @@ export class BeansEditComponent implements OnInit {
     if (this.editMode) {
       const bean = this.beansService.getBean(this.id);
       console.log(bean);
+      console.log(bean.roasting_house);
       id = bean._id;
       title = bean.title;
       imagePath = bean.image_url;
       large_imagepath = bean.large_image_url;
-      roasting_house = bean.factory_id;
+      roasting_house = bean.roasting_house._id;
+      this.selectedFactory = bean.roasting_house._id;
       taste = bean.taste;
       plantation = bean.plantation;
       country = bean.country;
       type = bean.type;
+
 
 
         }
@@ -124,22 +128,10 @@ export class BeansEditComponent implements OnInit {
     }
 
     else {
-      const title = this.beanForm.value.title;
-      const largeImage = this.beanForm.value.imagePathLarge;
-      const factoryId =this.beanForm.value.roasting_house;
-      const smallImage = this.beanForm.value.imagePath;
-      const taste = this.beanForm.value.taste;
-      const type = this.beanForm.value.type;
-      const plantation = this.beanForm.value.plantation;
-      const country = this.beanForm.value.country;
-
-    /*  const newBean = new Bean(title, smallImage, largeImage, factoryId); */
-
 
      this.dataStorageService.postCoffeeBean(this.beanForm.value);
       this.router.navigate(['/beans']);
 
-      //newBean = this.beanForm.
     }
 
   }

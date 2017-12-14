@@ -18,9 +18,7 @@ export class BeansListComponent implements OnInit, OnDestroy {
 
   objArray = [ { 'name':'Alles', value: "" }];
   tasteArray = [ { 'name':'Alles', value: "" }];
-  typeArray = [ { 'name':'Alles', value: "" },
-    /*{ 'name': "Espresso" , value: "espresso"},
-    { 'name': "Cafetiere" , value: "Cafetiere"} */];
+  typeArray = [ { 'name':'Alles', value: "" }];
   selectedPlantation: string = "";
   selectedTaste: string = "";
   selectedType: string = "";

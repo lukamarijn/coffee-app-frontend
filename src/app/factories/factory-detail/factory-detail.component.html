@@ -6,30 +6,33 @@
 </div>
 
   <div  class="list-group-item clearfix">
-    <div class="row">
-
-      <div class="col-md-6">
-
-        <h2>{{ factory.name }}</h2>
-
-
-      </div>
-    </div>
 
     <div class="row">
+      <div class="col-lg-12">
       <div class="pull-right">
-        <button class="btn btn-warning">
-          <span class="glyphicon glyphicon-edit" (click)="editFactory()"></span> Wijzig </button>
-        <button class="btn btn-danger">
-          <span class="glyphicon glyphicon-minus" (click)="deleteFactory()"></span>  Verwijder  </button>
+      <button class="btn btn-warning">
+        <span class="glyphicon glyphicon-edit" (click)="editFactory()"></span> Wijzig </button>
+      <button class="btn btn-danger">
+        <span class="glyphicon glyphicon-minus" (click)="deleteFactory()"></span>  Verwijder  </button>
+      </div>
       </div>
     </div>
 
-    <!--<div class="row">
+    <div class="row">
 
-      <img [src]="bean.large_image_url" [alt]="bean.title"   class="img-responsive detailed"
-           style="width: 650px; height: 250px; alignment: center">
+      <div class="col-md-12">
 
-    </div>-->
+        <h2>{{ factory.name }} ({{factory.city }})</h2>
 
+
+      </div>
+    </div>
+
+<div class="row">
+  <div class="col-lg-12">
+  <img src="{{factory.image_url}}"
+       style="max-width: 600px; alignment: center;  border-radius: 5%">
+  </div>
+
+</div>
   </div>

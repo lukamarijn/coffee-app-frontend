@@ -23,6 +23,7 @@ bar : Bar;
 subscription: Subscription;
 beans: Bean[];
 
+
 constructor(
   private route: ActivatedRoute,
   private barService : BarService,

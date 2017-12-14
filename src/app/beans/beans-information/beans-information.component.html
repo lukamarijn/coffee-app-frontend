@@ -1,6 +1,9 @@
 
 
-<div *ngIf="bean == null; else beans"> </div>
+<div *ngIf="bean == null; else beans">
+
+
+</div>
 
 <ng-template #beans>
 
@@ -21,8 +24,10 @@
       <p> Deze boon is verbouwd door de plantage {{bean.plantation}} </p>
       <p> {{bean.roasting_house.name}} is verantwoordelijk voor het branden van de bonen. </p>
 
+      <p> Geschrikt voor {{bean.type}} koffie </p>
       <p> Smaak : {{bean.taste}}</p>
       <p> Herkomst: {{bean.country}}</p>
+
 
     </div>
   </div>

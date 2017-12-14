@@ -1,0 +1,5 @@
+Runnen van server :
+
+Npm start voor het opstarten van de server.
+Npm test voor het starten van de testne.
+Npm install voor het installeren van de packages!

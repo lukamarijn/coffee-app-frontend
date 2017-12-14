@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Factory} from "../../../shared/factory.model";
 
+
 @Component({
   selector: 'app-factory-information',
   templateUrl: './factory-information.component.html',
@@ -13,6 +14,8 @@ export class FactoryInformationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
   }
 
 }
